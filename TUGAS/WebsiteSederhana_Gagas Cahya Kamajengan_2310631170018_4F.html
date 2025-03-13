@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #a52a2a;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 27px;
+            font-weight: bold;
+        }
+        .nav {
+            background-color: #800000;
+            text-align: center;
+            padding: 7px 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 65%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            background: #ddd;
+            padding: 20px;
+            width: 30%;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #003d82;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Selamat Datang di Website Sederhana</div>
+    <div class="nav">
+        <a href="#">Beranda</a>
+        <a href="#">Tentang</a>
+        <a href="#">Layanan</a>
+        <a href="#">Kontak</a>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <h2>Formulir Pendaftaran</h2>
+            <p2>Silakan isi formulir di bawah ini untuk mendaftar.</p2>
+            <form>
+                <label>Nama Lengkap :</label>
+                <input type="text" name="nama" required>
+                
+                <label>Email :</label>
+                <input type="email" name="email" required>
+                
+                <label>Password :</label>
+                <input type="password" name="password" required>
+                
+                <label>Jenis Kelamin :</label><br>
+                <input type="radio" name="gender" value="Laki-Laki"> Laki-Laki
+                <input type="radio" name="gender" value="Perempuan"> Perempuan
+                
+                <br><br>
+                <label>Hobi :</label><br>
+                <input type="checkbox" name="hobi" value="Musik"> Musik
+                <input type="checkbox" name="hobi" value="Olahraga"> Olahraga
+                <input type="checkbox" name="hobi" value="Membaca"> Membaca
+                
+                <br><br>
+                <label>Pilih Kota :</label>
+                <select name="kota">
+                    <option value="jakarta">Jakarta</option>
+                    <option value="bekasi">Bekasi</option>
+                    <option value="bandung">Bandung</option>
+                    <option value="bali">Bali</option>
+                    <option value="batam">Batam</option>
+                    <option value="bengkulu">Bengkulu</option>
+                </select>
+                
+                <label>Pesan Tambahan :</label>
+                <textarea name="pesan" placeholder="Tulis pesan di sini..."></textarea>
+                
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Website ini ditujukkan untuk memenuhi tugas matakuliah Pemrogaman Berbasis Website.</p>
+            <a href="#">Gagas Cahya Kamajengan_2310631170018_4F</a>
+        </div>
+    </div>
+</body>
+</html>
