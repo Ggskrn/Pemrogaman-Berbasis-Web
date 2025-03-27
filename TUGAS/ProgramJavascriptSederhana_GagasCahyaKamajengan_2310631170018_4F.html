@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Nilai Mahasiswa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cek Nilai Mahasiswa</h1>
+    
+    <div class="form-group">
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" placeholder="Masukkan NIM">
+    </div>
+    
+    <div class="form-group">
+        <label for="nilai">Nilai Mata Kuliah (0-100):</label>
+        <input type="number" id="nilai" placeholder="Masukkan nilai (0-100)" min="0" max="100">
+    </div>
+    
+    <button onclick="cekHurufMutu()">Cek Nilai</button>
+    
+    <div id="result"></div>
+
+    <script>
+        function cekHurufMutu() {
+            // Ambil nilai dari input
+            const nim = document.getElementById('nim').value;
+            const nilai = parseInt(document.getElementById('nilai').value);
+            const resultDiv = document.getElementById('result');
+            
+            // Validasi input
+            if (isNaN(nilai) || nilai < 0 || nilai > 100) {
+                resultDiv.innerHTML = '<strong>Error:</strong> Nilai tidak valid! Harap masukkan nilai antara 0-100.';
+                resultDiv.className = 'error';
+                return;
+            }
+            
+            // Tentukan huruf mutu
+            let hurufMutu;
+            if (nilai >= 80 && nilai <= 100) {
+                hurufMutu = 'A';
+            } else if (nilai >= 70 && nilai <= 79) {
+                hurufMutu = 'B';
+            } else if (nilai >= 60 && nilai <= 69) {
+                hurufMutu = 'C';
+            } else if (nilai >= 50 && nilai <= 59) {
+                hurufMutu = 'D';
+            } else {
+                hurufMutu = 'E';
+            }
+            
+            // Tampilkan hasil
+            resultDiv.innerHTML = `
+                <strong>Hasil:</strong><br>
+                NIM: ${nim}<br>
+                Nilai: ${nilai}<br>
+                Huruf Mutu: <strong>${hurufMutu}</strong>
+            `;
+            resultDiv.className = 'success';
+        }
+    </script>
+</body>
+</html>
